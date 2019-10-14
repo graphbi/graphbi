@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<title>Index Site</title>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<script type="text/javascript" language="javascript" src="/static/js/jquery-3.4.1.min.js"></script>
+		<script type="text/javascript" language="javascript" src="/static/js/script.js"></script>
+		<link rel="stylesheet" type="text/css" href="static/css/style.css">
+	</head>
+	<body>
+		<div class="sidebar">
+		  <a class="active" href="#home">Query/Table</a>
+		  <a href="#news">Group</a>
+		  <a href="#contact">Reshape/Pivot</a>
+		  <a href="#about">About</a>
+		</div>
+		
+		<div class="content">
+			<h4>Query console:</h4>
+			<textarea id="query" cols="100" rows="15" placeholder="Place your query here!" autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" wrap="off"></textarea>
+			<br>
+			<button id="button-query" type="button">Send query</button>
+			<br>
+				<div style="background-color:#F5F5F5; padding-left:16px; padding-right:16px;margin-top:16px;">
+					<div class="block">
+					<label>Filter</label>
+					<input id="input-filter" type="text" />
+					</div>
+					<div class="block">
+					<label>Group</label>
+					<input id="input-group" type="text" />
+					</div>
+				</div>
+			<div id="table" style="overflow-x:auto;margin-top:16px;"></div>
+		</div>
+	</body>
+</html>
+

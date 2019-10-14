@@ -1,0 +1,3 @@
+DONE 1. pagination for filtered or grouped tables
+2. cherrypy config with parameters for server etc
+3. get predicate types and pass them to pandasb dataframe loader
