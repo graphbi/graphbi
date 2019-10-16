@@ -7,13 +7,13 @@ from pandas.io.json import json_normalize
 
 cherrypy.config.update("server.conf")
 
-def query_data(client, queryStatement, queryName="query"):
+def query_data(client, queryStatement, queryName):
 
     query = queryStatement
     res = client.txn(read_only=True).query(query)
     return json.loads(res.json.decode('utf-8'))[queryName]
 
-def main(queryStatement, host, queryName="query"):
+def main(queryStatement, host, queryName):
     client_stub = pydgraph.DgraphClientStub(host)
     client = pydgraph.DgraphClient(client_stub)
     result = query_data(client, queryStatement, queryName)
