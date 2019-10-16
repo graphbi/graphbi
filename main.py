@@ -110,11 +110,11 @@ class tableApp(object):
 
     @cherrypy.expose
     def query(self, *args, **kwargs):
-        print(kwargs["query"])
+        queryStatement = kwargs["query"][kwargs["query"].find("{")+1:kwargs["query"].find("(")].replace("\n", "").replace(" ", "")
         host = cherrypy.request.app.config['graphdb']['host']
         schema = main('schema{predicate type}', host, 'schema')
         print(schema)
-        queryResult = main(kwargs["query"], host, 'query')
+        queryResult = main(kwargs["query"], host, queryStatement)
         print(queryResult)
         cherrypy.session['queryResultDataFrame'] = pd.DataFrame(queryResult)
         #cherrypy.session['queryResultDataFrame'] = pd.read_csv("http://data.insideairbnb.com/germany/be/berlin/2019-07-11/data/listings.csv.gz")
